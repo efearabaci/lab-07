@@ -1,7 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function App() {
+  const [enteredTaskText, setEnteredTaskText] = useState('');
+  const [tasks, setTasks] = useState([]);
+
   return (
     <SafeAreaView style={styles.appContainer}>
       <View style={styles.contentContainer}>
