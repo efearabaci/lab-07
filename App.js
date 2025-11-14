@@ -25,12 +25,25 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.appContainer}>
-      <View style={styles.contentContainer}>
-        <Text style={styles.title}>My Todo List</Text>
+
+    <View style={styles.contentContainer}>
+      <Text style={styles.title}>My Todo List</Text>
+
+      <View style={styles.inputContainer}>
+        <TextInput
+          style={styles.textInput}
+          placeholder="Add a new task..."
+          onChangeText={taskInputHandler}
+          value={enteredTaskText}
+        />
+        <Button title="Add" onPress={addTaskHandler} />
       </View>
+    </View>
+
+
     </SafeAreaView>
   );
-}
+} 
 
 
 const styles = StyleSheet.create({
@@ -49,4 +62,22 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     textAlign: 'center',
   },
+  inputContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 20,
+    borderBottomWidth: 1,
+    borderColor: '#ccc',
+    paddingBottom: 10,
+  },
+  textInput: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    padding: 10,
+    borderRadius: 6,
+    marginRight: 10,
+    fontSize: 16,
+  }
 });
